@@ -1,3 +1,0 @@
-if(something = somethingelse) {
-    console.log("hello world")
-}
