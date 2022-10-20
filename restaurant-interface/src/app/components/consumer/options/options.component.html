@@ -1,1 +1,7 @@
-<p>options works!</p>
+<div class="optionsContainer">
+    <app-menu-item [itemId]="itemId"></app-menu-item>
+    <label [for]="option[0]" *ngFor="let option of optionList" class="option">
+        <input type="checkbox" [name]="option[0]" [id]="option[0]">
+        {{option[1]}}
+    </label>
+</div>

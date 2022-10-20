@@ -10,6 +10,10 @@ interface MenuItemList {
   [key : string] : MenuItem;
 }
 
+interface OptionList {
+  [key : string] : string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,9 +36,20 @@ export class MenuInfoService {
     },
   }
 
+  private optionList : OptionList = {
+    mushrooms: "Mushrooms",
+    onions: "Onions",
+    olives: "Olives",
+    extraCheese: "Extra Cheese"
+  }
+
   constructor() { }
 
   getMenuItemInfo(itemId : string) : MenuItem {
     return this.menuItems[itemId];
+  }
+
+  getOptionsList() : OptionList {
+    return this.optionList
   }
 }

@@ -6,6 +6,7 @@ import { MenuComponent } from './components/consumer/menu/menu.component';
 
 import { InternalAppComponent } from './components/internal/internal-app/internal-app.component';
 import { OrderListComponent } from './components/internal/order-list/order-list.component';
+import { OptionsComponent } from './components/consumer/options/options.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: '',
         component: MenuComponent
+      },
+      {
+        path: 'options/:itemId',
+        component: OptionsComponent
       }
     ]
   },
