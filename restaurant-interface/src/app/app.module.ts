@@ -10,7 +10,6 @@ import { MenuComponent } from './components/consumer/menu/menu.component';
 import { OptionsComponent } from './components/consumer/options/options.component';
 import { CartComponent } from './components/consumer/cart/cart.component';
 import { NavLinkComponent } from './components/general/nav-link/nav-link.component';
-import { AsuLogoComponent } from './components/general/asu-logo/asu-logo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { AsuLogoComponent } from './components/general/asu-logo/asu-logo.compone
     OptionsComponent,
     CartComponent,
     NavLinkComponent,
-    AsuLogoComponent
   ],
   imports: [
     BrowserModule,

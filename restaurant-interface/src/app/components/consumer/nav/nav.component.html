@@ -1,1 +1,15 @@
-<p>nav works!</p>
+<div class="navContainer flexContainer">
+    <div class="flexContainer">
+        <img src="/assets/asu-logo.png" class="asuLogo">
+        <div>
+            <h1>SunDevil Pizza</h1>
+            <div class="flexContainer">
+                <app-nav-link text="Order" link="/"></app-nav-link>
+                <app-nav-link text="Order Status" link="/status"></app-nav-link>
+            </div>
+        </div>
+    </div>
+    <a routerLink="/cart" class="cart">
+        <img src="/assets/cart.png">
+    </a>
+</div>
