@@ -10,6 +10,7 @@ import { MenuComponent } from './components/consumer/menu/menu.component';
 import { OptionsComponent } from './components/consumer/options/options.component';
 import { CartComponent } from './components/consumer/cart/cart.component';
 import { NavLinkComponent } from './components/general/nav-link/nav-link.component';
+import { MenuItemComponent } from './components/consumer/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NavLinkComponent } from './components/general/nav-link/nav-link.compone
     OptionsComponent,
     CartComponent,
     NavLinkComponent,
+    MenuItemComponent,
   ],
   imports: [
     BrowserModule,
