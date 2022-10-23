@@ -8,7 +8,23 @@ import { InternalAppComponent } from './components/internal/internal-app/interna
 import { OrderListComponent } from './components/internal/order-list/order-list.component';
 import { OptionsComponent } from './components/consumer/options/options.component';
 
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 const routes: Routes = [
+  {
+    path: 'internal',
+    component: InternalAppComponent,
+    children: [
+      {
+        path: '',
+        component: OrderListComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      }
+    ]
+  },
   {
     path: '',
     component: ConsumerAppComponent,
@@ -20,19 +36,13 @@ const routes: Routes = [
       {
         path: 'options/:itemId',
         component: OptionsComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
       }
     ]
   },
-  {
-    path: 'internal',
-    component: InternalAppComponent,
-    children: [
-      {
-        path: '',
-        component: OrderListComponent
-      }
-    ]
-  }
 ];
 
 @NgModule({

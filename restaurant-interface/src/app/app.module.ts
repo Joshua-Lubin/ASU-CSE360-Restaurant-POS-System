@@ -11,6 +11,7 @@ import { OptionsComponent } from './components/consumer/options/options.componen
 import { CartComponent } from './components/consumer/cart/cart.component';
 import { NavLinkComponent } from './components/general/nav-link/nav-link.component';
 import { MenuItemComponent } from './components/consumer/menu-item/menu-item.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MenuItemComponent } from './components/consumer/menu-item/menu-item.com
     CartComponent,
     NavLinkComponent,
     MenuItemComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
