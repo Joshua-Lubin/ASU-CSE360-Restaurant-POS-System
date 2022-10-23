@@ -1,0 +1,26 @@
+.menuItem {
+    text-align: left;
+    width: 175px;
+    height: 100px;
+    border-radius: 10px;
+    background-size: cover;
+    color: #fff;
+    display: inline-block;
+    margin: 20px;
+    font-weight: 600;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.6); 
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.6);
+}
+.price {
+    width: fit-content;
+    margin-left: auto;
+    padding: 5px 15px;
+    border-radius: 100px;
+    background-color: #8C1D40;
+}
+.name {
+    margin-top:52px;
+    justify-self: left;
+    align-self: flex-end;
+}

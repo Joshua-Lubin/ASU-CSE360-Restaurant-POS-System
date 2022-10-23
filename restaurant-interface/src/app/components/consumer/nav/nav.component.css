@@ -1,0 +1,30 @@
+.asuLogo {
+    height: 75px;
+    margin: 20px;
+    margin-right: 30px;
+    margin-bottom: 16px;
+}
+
+.cart {
+    height: 40px;
+    justify-self: right;
+    align-self: center;
+}
+
+.cart img {
+    height: 40px;
+}
+
+.navContainer {
+    border-bottom: 1px #d6d6d6 solid;
+    justify-content: space-around;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+h1 {
+    margin-top: 27px;
+    margin-bottom: 20px;
+}

@@ -1,7 +1,49 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ConsumerAppComponent } from './components/consumer/consumer-app/consumer-app.component';
+import { MenuComponent } from './components/consumer/menu/menu.component';
+
+import { InternalAppComponent } from './components/internal/internal-app/internal-app.component';
+import { OrderListComponent } from './components/internal/order-list/order-list.component';
+import { OptionsComponent } from './components/consumer/options/options.component';
+
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
+const routes: Routes = [
+  {
+    path: 'internal',
+    component: InternalAppComponent,
+    children: [
+      {
+        path: '',
+        component: OrderListComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      }
+    ]
+  },
+  {
+    path: '',
+    component: ConsumerAppComponent,
+    children: [
+      {
+        path: '',
+        component: MenuComponent
+      },
+      {
+        path: 'options/:itemId',
+        component: OptionsComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      }
+    ]
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

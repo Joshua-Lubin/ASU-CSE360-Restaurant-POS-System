@@ -1,17 +1,21 @@
 package com.cse360group19;
 
-/**
- * Hello world!
- */
+import java.io.IOException;
+
+import com.cse360group19.server.Server;
+
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Server server = new Server();
+
+        try {
+            server.listen();
+        }
+        catch(IOException exception) {
+            System.out.println(exception);
+        }
     }
 }

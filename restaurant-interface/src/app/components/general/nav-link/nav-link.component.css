@@ -1,0 +1,17 @@
+.navLink {
+    color: inherit;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+}
+
+.navLink:hover {
+    margin-bottom: 0;
+    border-bottom: 8px #FFC627 solid
+}
+
+.activeNavLink {
+    margin-bottom: 0;
+    border-bottom: 8px #FFC627 solid
+}
