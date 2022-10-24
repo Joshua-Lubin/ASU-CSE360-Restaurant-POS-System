@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuInfoService } from 'src/app/services/menu-info/menu-info.service';
-
-interface CartItem {
-  id: string;
-  options: string[];
-  quantity: number;
-}
+import { CartStatusService, CartItem } from 'src/app/services/cart-status/cart-status.service';
 
 @Component({
   selector: 'app-options',
@@ -24,7 +19,7 @@ export class OptionsComponent implements OnInit {
     quantity: 1
   };
 
-  constructor(private route : ActivatedRoute, private menuInfoService : MenuInfoService) { }
+  constructor(private route : ActivatedRoute, private router : Router, private menuInfoService : MenuInfoService, private cartStatusService : CartStatusService) { }
 
   ngOnInit(): void {
     this.item.id = this.route.snapshot.paramMap.get('itemId') as string;
@@ -32,7 +27,10 @@ export class OptionsComponent implements OnInit {
   }
 
   addToCart(): void {
-    console.log("clicked");
+    this.cartStatusService.addItem(this.item);
+    console.log(this.cartStatusService.getCart());
+
+    this.router.navigate(['cart']);
   }
 
   checkBoxEvent(event : any): void {
@@ -45,12 +43,17 @@ export class OptionsComponent implements OnInit {
     else {
       this.item.options.splice(index, 1);
     }
-
-    console.log(this.item);
   }
 
   changeQuantityEvent(event : any): void {
-    console.log(event);
+    const value = parseInt(event.currentTarget.value);
+    if(isNaN(value) || value < 1) {
+      event.currentTarget.value = 1;
+      this.item.quantity = 1;
+    }
+    else {
+      console.log(value);
+      this.item.quantity = value;
+    }
   }
-
 }

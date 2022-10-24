@@ -4,9 +4,9 @@
         <input type="checkbox" [name]="option[0]" (change)="checkBoxEvent($event)">
         {{option[1]}}
     </label>
-    <label>
+    <label class="option center">
         Quantity
-        <input type="number" name="quantity" (change)="changeQuantityEvent($event)">
+        <input type="number" name="quantity" (change)="changeQuantityEvent($event)" value="1" class="numberInput">
     </label>
-    <button class="addToCart" (click)="addToCart()">Add to Cart</button>
+    <button (click)="addToCart()">Add to Cart</button>
 </div>

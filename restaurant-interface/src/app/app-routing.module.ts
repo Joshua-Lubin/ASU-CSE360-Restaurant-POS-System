@@ -9,6 +9,9 @@ import { OrderListComponent } from './components/internal/order-list/order-list.
 import { OptionsComponent } from './components/consumer/options/options.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CartComponent } from './components/consumer/cart/cart.component';
+import { AsuriteCheckoutComponent } from './components/consumer/asurite-checkout/asurite-checkout.component';
+import { StatusComponent } from './components/consumer/status/status.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,19 @@ const routes: Routes = [
       {
         path: 'options/:itemId',
         component: OptionsComponent
+      },
+      
+      {
+        path: 'cart',
+        component: CartComponent
+      },
+      {
+        path: 'asurite-checkout',
+        component: AsuriteCheckoutComponent
+      },
+      {
+        path: 'status/:id',
+        component: StatusComponent
       },
       {
         path: '**',
