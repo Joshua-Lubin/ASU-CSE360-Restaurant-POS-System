@@ -58,8 +58,9 @@ public class OrderStatusHandler implements HttpHandler {
 
                 JSONArray options = new JSONArray();
 
-                for(int j = 0; j < currentItem.options.length; j++) {
-                    options.add(currentItem.options[j]);
+                String[] currOptions = currentItem.getOptions();
+                for(int j = 0; j < currOptions.length; j++) {
+                    options.add(currOptions[j]);
                 }
 
                 item.put("options", options);

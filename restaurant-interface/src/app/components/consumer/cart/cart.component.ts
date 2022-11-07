@@ -28,5 +28,8 @@ export class CartComponent implements OnInit {
   cardCheckout(): void {
     this.router.navigate(['card-checkout']);
   }
-
+  
+  addAnotherItem(): void {
+    this.router.navigate(['menu']);
+  }
 }
