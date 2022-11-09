@@ -9,5 +9,12 @@ public class OrderStorage {
 
     public OrderStorage() {
         this.orders = new LinkedList<Order>();
+        /*
+        String[] str = new String[0];
+        Item temp = new Item(str, "cheese", 1);
+        Order order = new Order();
+        order.items.add(temp);
+        orders.add(order);
+        */
     }
 }
