@@ -6,30 +6,22 @@ import com.cse360group19.server.Authenticate;
 import com.cse360group19.server.OrderStorage;
 import com.cse360group19.server.Server;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-
-public final class App extends Application {
+public final class App {
     private App() {
     }
 
     public static void main(String[] args) {
         Server server = new Server();
         OrderStorage orderStorage = new OrderStorage();
-        launch();
+        Authenticate.main(args);
+        while(Authenticate.delay) {
+            /* Infinite loop waiting for Authenticate to finish */
+        }
         try {
             server.listen(orderStorage);
         }
         catch(IOException exception) {
             System.out.println(exception);
-        }
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Authenticate.launch();
-        while(Authenticate.delay) {
-            /* Infinite loop waiting for Authenticate to finish */
         }
     }
 }
