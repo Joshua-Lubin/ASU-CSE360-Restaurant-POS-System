@@ -1,59 +1,44 @@
 package com.cse360group19.server.handlers;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import com.sun.net.httpserver.HttpHandler;
-import com.cse360group19.server.Item;
 import com.cse360group19.server.Order;
 import com.cse360group19.server.OrderStorage;
-import com.cse360group19.server.Utility;
 import com.sun.net.httpserver.HttpExchange;
-
-import org.json.simple.JSONValue;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
 
 public class ModifyOrderStatusHandler implements HttpHandler {
 
     static final int OK = 200;
     static final int INTERNAL_SERVER_ERROR = 500;
-    UpdateStatus UpdateStatus;
+    OrderStorage orderStorage;
 
-	@Override
-	public void handle(HttpExchange exchange) throws IOException {
-		// TODO Auto-generated method stub
-        try{
+    public ModifyOrderStatusHandler(OrderStorage orderStorage) {
+        this.orderStorage = orderStorage;
+    }
 
-            int changeOrderStatus;  //user input in which pizza
-            String newStatus; //user input
+    @Override
+    public void handle(HttpExchange exchange) throws IOException {
+        try {
+
+            int changeOrderStatus = 0; // user input in which pizza to change status
+            String newStatus = "accepted"; // user input to new status
             List<Order> orders = orderStorage.orders;
 
-            for(int i =0; i < orders.size(); i++){  //goes through the list of orders
-                if(orders.get(i).id == changeOrderStatus){
-                    if(newStatus.equals("READY to COOK")){
-                        order.status = "READY to COOK";
-                    }
-                    else if(newStatus.equals("COOKING")){
-                        order.status = "COOKING";
-                    }
-                    else if(newStatus.equals("READY")){
-                        order.status = "READY";
-                    }
-                    else{
-                        order.status = "ACCEPTED";
-                    }
+            for (int i = 0; i < orders.size(); i++) { // goes through the list of orders
+                if (orders.get(i).id == changeOrderStatus) {
+                    orders.get(i).status = newStatus;
                 }
 
             }
 
+        } catch (Exception e) {
+            exchange.sendResponseHeaders(INTERNAL_SERVER_ERROR, 0);
+            OutputStream stream = exchange.getResponseBody();
+            stream.close();
         }
-		
-	}
-    
+
+    }
+
 }
