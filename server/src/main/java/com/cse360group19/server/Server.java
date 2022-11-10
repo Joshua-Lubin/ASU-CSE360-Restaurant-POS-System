@@ -6,6 +6,7 @@ import java.net.InetSocketAddress;
 import com.cse360group19.server.handlers.AllOrderStatusHandler;
 import com.cse360group19.server.handlers.CreateAsuriteOrderHandler;
 import com.cse360group19.server.handlers.GetTemplateHandler;
+import com.cse360group19.server.handlers.ModifyOrderStatusHandler;
 import com.cse360group19.server.handlers.OrderStatusHandler;
 import com.cse360group19.server.handlers.PostTemplateHandler;
 import com.cse360group19.server.handlers.UniversalHandler;
@@ -32,6 +33,7 @@ public class Server {
         server.createContext("/api/create-asurite-order", new CreateAsuriteOrderHandler(orderStorage));
         server.createContext("/api/order-status", new OrderStatusHandler(orderStorage));
         server.createContext("/api/all-order-status", new AllOrderStatusHandler(orderStorage));
+        server.createContext("/api/modify-order-status", new ModifyOrderStatusHandler(orderStorage));
 
         System.out.println("Server listening on port " + port);
 
