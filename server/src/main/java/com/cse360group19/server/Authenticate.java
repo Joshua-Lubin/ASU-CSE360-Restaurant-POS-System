@@ -11,7 +11,8 @@ import javafx.stage.Stage;
 
 public class Authenticate extends Application {
     String password = "admin";
-    static boolean admin = false;
+    public static boolean admin = false;
+    public static boolean delay = true;
     @Override
     public void start(Stage stage) throws IOException {
         Label label = new Label("Enter the password to access restaurant interface.");
@@ -25,11 +26,13 @@ public class Authenticate extends Application {
         pane.add(btn_cancel, 1, 2);
         btn_cancel.setOnAction(actionEvent -> {
             stage.hide();
+            delay = false;
         });
         btn_login.setOnAction(actionEvent -> {
             if(txt_password.getText().equals(password)) {
                 admin = true;
                 stage.hide();
+                delay = false;
             }
         });
 
@@ -37,9 +40,5 @@ public class Authenticate extends Application {
         stage.setTitle("SunDevil Pizza Shop");
         stage.setScene(scene);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
