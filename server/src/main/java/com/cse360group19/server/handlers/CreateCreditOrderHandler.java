@@ -17,6 +17,8 @@ import org.json.simple.JSONValue;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 
+import com.cse360group19.server.CreditCard;
+
 public class CreateCreditOrderHandler implements HttpHandler{
 
     // response integers for Http Protocol
@@ -44,8 +46,37 @@ public class CreateCreditOrderHandler implements HttpHandler{
             // create new order object
             Order newOrder = new Order();
 
-            // create json object to hold order items
+            // create json object Array to hold order items
             JSONArray items = (JSONArray) inputObject.get("order");
+
+            // create json object to hold credit card
+            JSONObject credCard = (JSONObject) inputObject.get("creditCard");
+
+            // variables to hold credit card details
+            long cardNumber;
+            int cvv;
+            String expDate;
+
+            // extract cardNumber from creditCard object, then use print to test if it works properly
+            cardNumber = Long.parseLong(credCard.get("cardNumber").toString());
+            System.out.println(cardNumber);
+
+            // extract cvv from creditCard object, then use the print to tests if it works properly
+            cvv = Integer.parseInt(credCard.get("cvv").toString());
+            System.out.println(cvv);
+
+            // extract expiration date from credit card object, then print to test
+            expDate = credCard.get("expDate").toString();
+            System.out.println(expDate);
+
+            // create credit card object using the parameters we extracted
+            CreditCard creditCard = new CreditCard(cardNumber, cvv, expDate);
+
+            // check if carNumber and cvv are valid
+            if (creditCard.isCardNumValid(cardNumber) == false || creditCard.isCvvValid(cvv) == false){
+                // if card details were not valid then throw an exception
+                throw new Exception();
+            }
 
             // variables to hold order details
             int quantity;       // # of pizzas order

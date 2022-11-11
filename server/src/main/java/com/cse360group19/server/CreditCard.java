@@ -3,15 +3,30 @@ package com.cse360group19.server;
 public class CreditCard {
     
     // variables to hold card details
-    public long cardNumber;
-    public int cvv;
-    public String expDate;
+    private long cardNumber;
+    private int cvv;
+    private String expDate;
 
     // constructor
     public CreditCard(long cardNumber, int cvv, String expDate){
         this.cardNumber = cardNumber;
         this.cvv = cvv;
         this.expDate = expDate;
+    }
+
+    // getter method for cardNumber
+    public long getCardNumber(){
+        return this.cardNumber;
+    }
+
+    // getter method for the cvv
+    public int getCVV(){
+        return this.cvv;
+    }
+
+    // getter method for the expiration date
+    public String getExpDate(){
+        return this.expDate;
     }
 
     // method to get the number of digits in a given number
@@ -110,7 +125,7 @@ public class CreditCard {
     //        would be 1 + 4 or 5.
     //
     // This function returns true if criteria is met and false otherwise
-    public static boolean isCardNumValid(long cardNum){
+    public boolean isCardNumValid(long cardNum){
         if (getNumDigits(cardNum) >= 13 && getNumDigits(cardNum) <= 16)
         {
             if (isFirstDigit(cardNum, 4) == true && isCardNumDivByTen(cardNum) == true){
@@ -123,6 +138,19 @@ public class CreditCard {
                 return true;
             }
             else if (isFirstDigit(cardNum, 37) == true && isCardNumDivByTen(cardNum) == true){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
+    // This method will make sure the cvv is valid.
+    // the critria is that the cvv number is a 3 digit integer
+    public boolean isCvvValid(int cvv){
+        if (cvv == (int)cvv){
+            // now that we know the value is actually an integer, check if 3 digits
+            if (cvv >= 100 && cvv <= 999){
                 return true;
             }
         }
