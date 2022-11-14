@@ -14,7 +14,6 @@ export class StatusComponent implements OnInit {
   status? : string;
   items? : CartItem[];
 
-
   constructor(private route : ActivatedRoute, private http : HttpClient) {
     this.id = route.snapshot.paramMap.get("id");
   }

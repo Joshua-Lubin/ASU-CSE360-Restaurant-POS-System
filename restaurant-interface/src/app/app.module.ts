@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CartItemComponent } from './components/consumer/cart-item/cart-item.component';
 import { AsuriteCheckoutComponent } from './components/consumer/asurite-checkout/asurite-checkout.component';
 import { StatusComponent } from './components/consumer/status/status.component';
+import { CommonModule } from '@angular/common';
+import { OrderListComponent } from './components/internal/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,11 @@ import { StatusComponent } from './components/consumer/status/status.component';
     CartItemComponent,
     AsuriteCheckoutComponent,
     StatusComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule
   ],

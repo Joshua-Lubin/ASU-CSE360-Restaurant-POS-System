@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.cse360group19.gui.Main",
+            "projectName": "server"
+        },
+        {
+            "type": "java",
+            "name": "Launch Authenticate",
+            "request": "launch",
+            "mainClass": "com.cse360group19.gui.Authenticate",
+            "projectName": "server"
+        },
+        {
+            "type": "java",
+            "name": "Launch Authenticate",
+            "request": "launch",
+            "mainClass": "com.cse360group19.server.Authenticate",
+            "projectName": "server"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

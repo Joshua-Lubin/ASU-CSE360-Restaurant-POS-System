@@ -20,6 +20,7 @@ export class AsuriteCheckoutComponent implements OnInit {
   checkout(): void {
     this.http.post<any>('http://localhost:3000/api/create-asurite-order', { asuriteId: this.asuriteId, order: this.cartStatusService.cart })
       .subscribe(data => {
+        this.cartStatusService.cart = [];
         this.router.navigate(['status', data.id]);
       });
   }
