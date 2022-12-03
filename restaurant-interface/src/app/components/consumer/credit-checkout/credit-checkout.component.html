@@ -1,4 +1,5 @@
 <div>
+    <button (click)="asuriteCheckout()">Checkout With Asurite ID</button>
     <label>
         Enter Asurite ID for 15% discount:
         <input type="number" (change)="asu($event)"/>
@@ -15,5 +16,5 @@
         CVV:
         <input type="number" (change)="cvv($event)"/>
     </label>
-    <button (click)="checkout()">Checkout</button>
+    <button (click)="checkout()">Checkout With Credit Card</button>
 </div>

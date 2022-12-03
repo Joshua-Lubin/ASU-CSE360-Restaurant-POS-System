@@ -47,4 +47,8 @@ export class CreditCheckoutComponent implements OnInit {
     this.CVV = parseInt(event.target.value);
   }
 
+  asuriteCheckout(): void {
+    this.router.navigate(['asurite-checkout']);
+  }
+
 }

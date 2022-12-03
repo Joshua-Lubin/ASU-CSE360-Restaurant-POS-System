@@ -29,4 +29,8 @@ export class AsuriteCheckoutComponent implements OnInit {
     this.asuriteId = parseInt(event.target.value);
   }
 
+  cardCheckout(): void {
+    this.router.navigate(['card-checkout']);
+  }
+
 }
