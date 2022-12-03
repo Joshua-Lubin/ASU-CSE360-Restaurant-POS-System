@@ -1,1 +1,16 @@
-<div>Item: {{item.id}}<br> Options: {{item.options}}<br> Quantity {{item.quantity}}<br> $10</div>
+<div class="cartItem">
+    <div>
+        <span style="font-weight: 600;">{{menuItem.name}}</span>
+        <div>{{optionsList.length === 0 ? undefined : optionsList.join(", ")}}</div>
+        <div>${{menuItem.price * item.quantity}}</div>
+    </div>
+    <div class="quantityWrapper" *ngIf="statusOnly !== true">
+        <div>Quantity <input style="width:30px" type="number" [defaultValue]="item.quantity" (change)="updateQuantity($event)"/></div>
+    </div>
+    <div class="quantityWrapper" *ngIf="statusOnly === true">
+        <div>Quantity: {{item.quantity}}</div>
+    </div>
+    <div *ngIf="statusOnly !== true">
+        <button style="margin-left: 10px" (click)="removeItem()">X</button>
+    </div>
+</div>

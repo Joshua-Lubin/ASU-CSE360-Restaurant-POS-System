@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface MenuItem {
+export interface MenuItem {
   name: string;
   price: number;
   imageUrl: string;
@@ -10,7 +10,7 @@ interface MenuItemList {
   [key : string] : MenuItem;
 }
 
-interface OptionList {
+export interface OptionList {
   [key : string] : string;
 }
 

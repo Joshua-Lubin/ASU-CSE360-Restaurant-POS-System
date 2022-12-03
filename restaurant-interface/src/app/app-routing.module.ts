@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CartComponent } from './components/consumer/cart/cart.component';
 import { AsuriteCheckoutComponent } from './components/consumer/asurite-checkout/asurite-checkout.component';
 import { StatusComponent } from './components/consumer/status/status.component';
+import { StatusPromptComponent } from './components/consumer/status-prompt/status-prompt.component';
+import { CreditCheckoutComponent } from './components/consumer/credit-checkout/credit-checkout.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,10 @@ const routes: Routes = [
         component: MenuComponent
       },
       {
+        path: 'status',
+        component: StatusPromptComponent
+      },
+      {
         path: 'options/:itemId',
         component: OptionsComponent
       },
@@ -48,6 +54,10 @@ const routes: Routes = [
       {
         path: 'asurite-checkout',
         component: AsuriteCheckoutComponent
+      },
+      {
+        path: 'card-checkout',
+        component: CreditCheckoutComponent
       },
       {
         path: 'status/:id',

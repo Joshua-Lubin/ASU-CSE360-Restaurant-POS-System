@@ -1,0 +1,19 @@
+<div>
+    <label>
+        Enter Asurite ID for 15% discount:
+        <input type="number" (change)="asu($event)"/>
+    </label>
+    <label>
+        Credit Card Number:
+        <input type="number" (change)="ccn($event)"/>
+    </label>
+    <label>
+        Expiration Date:
+        <input type="text" (change)="exp($event)"/>
+    </label>
+    <label>
+        CVV:
+        <input type="number" (change)="cvv($event)"/>
+    </label>
+    <button (click)="checkout()">Checkout</button>
+</div>

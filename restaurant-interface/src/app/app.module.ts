@@ -18,6 +18,9 @@ import { AsuriteCheckoutComponent } from './components/consumer/asurite-checkout
 import { StatusComponent } from './components/consumer/status/status.component';
 import { CommonModule } from '@angular/common';
 import { OrderListComponent } from './components/internal/order-list/order-list.component';
+import { StatusPromptComponent } from './components/consumer/status-prompt/status-prompt.component';
+import { FormsModule } from '@angular/forms';
+import { CreditCheckoutComponent } from './components/consumer/credit-checkout/credit-checkout.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,16 @@ import { OrderListComponent } from './components/internal/order-list/order-list.
     CartItemComponent,
     AsuriteCheckoutComponent,
     StatusComponent,
-    OrderListComponent
+    OrderListComponent,
+    StatusPromptComponent,
+    CreditCheckoutComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

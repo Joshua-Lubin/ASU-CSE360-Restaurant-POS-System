@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div *ngIf="authenticated === false">
+    <label>
+        Password
+        <input type="password" [(ngModel)]="password"/>
+    </label>
+    <button type="submit" (click)="login()">Login</button>
+</div>
+<div *ngIf="authenticated === true">
+    <h1 style="text-align: center">Order List</h1>
+    <router-outlet></router-outlet>
+</div>

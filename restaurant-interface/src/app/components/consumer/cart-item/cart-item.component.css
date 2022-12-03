@@ -1,13 +1,18 @@
-div {
-    display: block;
+.cartItem {
+    display: flex;
     text-align: left;
     background-color: #f5f5f5;
     width: 500px;
-    padding: 10px;
+    padding: 10px 20px;
     border: #dcdcdc 1px solid;
     margin-top: 5px;
     margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+}
+
+.quantityWrapper {
+    flex-grow: 1;
+    text-align: right;
 }

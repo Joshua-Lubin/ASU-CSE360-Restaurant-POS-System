@@ -1,5 +1,5 @@
 <div>
-    <app-cart-item *ngFor="let item of cart" [item]="item"></app-cart-item>
+    <app-cart-item *ngFor="let item of cart; let index = index" [item]="item" [index]="index" (updateTotal)="updateTotal()"></app-cart-item>
     <div>Total: ${{total}}</div>
     <button (click)="asuriteCheckout()">Checkout With Asurite ID</button>
     <button (click)="cardCheckout()">Checkout With Credit Card</button>

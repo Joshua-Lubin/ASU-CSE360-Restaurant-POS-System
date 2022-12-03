@@ -1,10 +1,10 @@
 .wrapper {
     display: block;
     text-align: left;
-    background-color: #f5f5f5;
-    width: 400px;
+    background-color: #ffffff;
+    width: fit-content;
     padding: 10px;
-    border: #dcdcdc 1px solid;
+    border: #000000 1px solid;
     margin-top: 5px;
     margin-bottom: 25px;
     margin-left: auto;

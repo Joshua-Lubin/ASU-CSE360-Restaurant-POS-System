@@ -6,7 +6,9 @@ import java.net.InetSocketAddress;
 import com.cse360group19.data_structures.OrderStorage;
 import com.cse360group19.data_structures.PasswordStorage;
 import com.cse360group19.server.routes.AllOrderStatusHandler;
+import com.cse360group19.server.routes.CheckPasswordHandler;
 import com.cse360group19.server.routes.CreateAsuriteOrderHandler;
+import com.cse360group19.server.routes.CreateCreditOrderHandler;
 import com.cse360group19.server.routes.GetTemplateHandler;
 import com.cse360group19.server.routes.ModifyOrderStatusHandler;
 import com.cse360group19.server.routes.OrderStatusHandler;
@@ -24,9 +26,11 @@ public class Server {
         server.createContext("/api/gettemplate", new GetTemplateHandler());
         server.createContext("/api/posttemplate", new PostTemplateHandler());
         server.createContext("/api/create-asurite-order", new CreateAsuriteOrderHandler(orderStorage));
+        server.createContext("/api/create-credit-order", new CreateCreditOrderHandler(orderStorage));
         server.createContext("/api/order-status", new OrderStatusHandler(orderStorage));
         server.createContext("/api/all-order-status", new AllOrderStatusHandler(orderStorage));
         server.createContext("/api/modify-order-status", new ModifyOrderStatusHandler(orderStorage));
+        server.createContext("/api/check-password", new CheckPasswordHandler(passwordStorage));
     }
 
     public void listen() {

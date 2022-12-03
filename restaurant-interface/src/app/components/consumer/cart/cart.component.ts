@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartStatusService, CartItem } from 'src/app/services/cart-status/cart-status.service';
 
@@ -10,15 +10,13 @@ import { CartStatusService, CartItem } from 'src/app/services/cart-status/cart-s
 export class CartComponent implements OnInit {
 
   cart : CartItem[] = [];
-  total : number = 0;
+  @Input() total : number = 0;
 
-  constructor(private cartStatusServer : CartStatusService, private router : Router) { }
+  constructor(private cartStatusService : CartStatusService, private router : Router) { }
 
   ngOnInit(): void {
-    this.cart = this.cartStatusServer.getCart();
-    for(let i = 0; i  < this.cart.length; i++) {
-      this.total += this.cart[i].quantity * 10;
-    }
+    this.cart = this.cartStatusService.getCart();
+    this.total = this.cartStatusService.totalPrice;
   }
 
   asuriteCheckout(): void {
@@ -27,6 +25,10 @@ export class CartComponent implements OnInit {
 
   cardCheckout(): void {
     this.router.navigate(['card-checkout']);
+  }
+
+  updateTotal() : void {
+    this.total = this.cartStatusService.totalPrice;
   }
 
 }

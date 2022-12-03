@@ -1,8 +1,9 @@
-<div class="center">
-    <div class="wrapper">Status: {{status}}</div>
-    <div *ngFor="let item of items" class="wrapper">
-        <div>Id: {{item.id}}</div>
-        <div>Quantity: {{item.quantity}}</div>
-        <div>Options: {{item.options}}</div>
-    </div>
+<div class="center" *ngIf="items !== undefined && items.length > 0">
+    <h1>Order ID: {{id}}</h1>
+    <div class="wrapper" style="margin-top: 25px">Status: {{status}}</div>
+    <app-cart-item *ngFor="let item of items" [item]="item" [statusOnly]="true"></app-cart-item>
+</div>
+<div class="center" *ngIf="items !== undefined && items.length === 0">
+    <h1>Order not found or checkout failed!</h1>
+    <h2>Please try again.</h2>
 </div>
